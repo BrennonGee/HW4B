@@ -1,8 +1,6 @@
-package project6;
+package HW4B;
 
-
-
-public class Node implements Position {
+public class Node {
 
     private Object key;
     private Node leftChild, rightChild, parent;
