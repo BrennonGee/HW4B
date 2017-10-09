@@ -36,8 +36,27 @@ public class BinarySearchTree {
         }
     }
     
-    public void delete(){
+    public void delete(BST T, node z){
+        if (z.left == null){
+            transplant (T, z, z.right);
+        }
+        else if (z.right == null){
+            transplant(T, z, z.left);
+        }
         
+        else{
+            node y = min(z.right);
+            
+            if (y.parent != z){
+                transplant (T, y, y.right);
+                y.right = z.right;
+                y.right.parent = y;
+            }
+            
+            transplant(T, z, y);
+            y.left = z.left;
+            y.left.parent = y;
+        }
     }
     
     //Finds the node with the smallest key
