@@ -83,8 +83,19 @@ public class BinarySearchTree {
         return y;
     }
     
-    public void Predecessor(){
+    public node Predecessor(node x){
+                if (x.right != null){
+            return Min(x.left);
+        }
         
+        node y = x.parent;
+        
+        while (y != null && x == y.left){
+            x = y;
+            y = y.parent;
+        }
+        
+        return y;
     }
     
     public void PrintInOrder(node root){
