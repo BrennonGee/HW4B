@@ -26,24 +26,52 @@ public class BinarySearchTree {
         
     }
     
-    public void Min(){
+    public node Min(node x){
         
+        while (x != null){
+            x = x.left;
+        }
+        
+        return x;
     }
     
-    public void Max(){
+    
+    public node Max(node x){
         
+        while (x != null){
+            x = x.right;
+        }
+        
+        return x;
     }
     
-    public void Successor(){
+    public node Successor(node x){
         
+        if (x.right != null){
+            return Min(x.right);
+        }
+        
+        node y = x.parent;
+        
+        while (y != null && x == y.right){
+            x = y;
+            y = y.parent;
+        }
+        
+        return y;
     }
     
     public void Predecessor(){
         
     }
     
-    public void Print(){
-        
+    public void PrintInOrder(node root){
+        if(root !=  null) {
+            PrintInOrder(root.left);
+            //Visit the node by Printing the node data  
+            System.out.printf("%d ",root.data);
+            PrintInOrder(root.right);
+        }
     }
     
 }
