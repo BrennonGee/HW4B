@@ -69,7 +69,7 @@ public class BinarySearchTree {
         if(root !=  null) {
             PrintInOrder(root.left);
             //Visit the node by Printing the node data  
-            System.out.printf("%d ",root.data);
+            System.out.printf("%d ",root.key);
             PrintInOrder(root.right);
         }
     }
