@@ -6,14 +6,11 @@ package HW4B;
  */
 public class BinarySearchTree {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // TODO code application logic here
     }
     
-    public void Insert(BST T, node z){
+    public void insert(BST T, node z){
         node y = null;
         node x = T.root;
         
@@ -39,11 +36,12 @@ public class BinarySearchTree {
         }
     }
     
-    public void Delete(){
+    public void delete(){
         
     }
     
-    public node Min(node x){
+    //Finds the node with the smallest key
+    public node min(node x){
         
         while (x != null){
             x = x.left;
@@ -52,8 +50,8 @@ public class BinarySearchTree {
         return x;
     }
     
-    
-    public node Max(node x){
+    //Finds the node with the largest key
+    public node max(node x){
         
         while (x != null){
             x = x.right;
@@ -62,10 +60,11 @@ public class BinarySearchTree {
         return x;
     }
     
-    public node Successor(node x){
+    //Find the smallest key greater than x.key
+    public node successor(node x){
         
         if (x.right != null){
-            return Min(x.right);
+            return min(x.right);
         }
         
         node y = x.parent;
@@ -78,9 +77,10 @@ public class BinarySearchTree {
         return y;
     }
     
-    public node Predecessor(node x){
+    //find the largest key smaller than x.key
+    public node predecessor(node x){
                 if (x.right != null){
-            return Min(x.left);
+            return max(x.left);
         }
         
         node y = x.parent;
@@ -93,12 +93,13 @@ public class BinarySearchTree {
         return y;
     }
     
-    public void PrintInOrder(node root){
+    //print method 
+    public void printInOrder(node root){
         if(root !=  null) {
-            PrintInOrder(root.left);
+            printInOrder(root.left);
             //Visit the node by Printing the node data  
             System.out.printf("%d ",root.key);
-            PrintInOrder(root.right);
+            printInOrder(root.right);
         }
     }
     
