@@ -18,8 +18,30 @@ public class BinarySearchTree {
         // TODO code application logic here
     }
     
-    public void Insert(){
+    public void Insert(BST T, node z){
+        node y = null;
+        node x = T.root;
         
+        while (x != null){
+            y = x;
+            if (z.key < x.Key){
+                x = x.left;
+            }
+            else{
+                x = x.right;
+            }
+        }
+        z.p = y;
+        if (y == null){
+            T.root = z;
+        }
+        else if (z.key < y.key){
+            y.left = z;
+        }
+        
+        else {
+            y.right = z;
+        }
     }
     
     public void Delete(){
