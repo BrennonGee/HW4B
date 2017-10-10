@@ -4,15 +4,16 @@ package HW4B;
  *
  * @author brennongee
  */
-public class BinarySearchTree {
+
+public class BinarySearchTree extends Node{
 
     public static void main(String[] args) {
         // TODO code application logic here
     }
     
-    public void insert(BST T, node z){
-        node y = null;
-        node x = T.root;
+    public void insert(BST T, Node z){
+        Node y = null;
+        Node x = T.root;
         
         while (x != null){
             y = x;
